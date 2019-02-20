@@ -19,3 +19,12 @@ As the long-distance runner trains, she realizes that she would also like to kno
 ![Stretch Goals](images/stretch-goals.gif)
 
 A deployed version of the application with stretch goals can be found at: react-runner-stretch.netlify.com
+
+### Additional Stretch Goals
+
+- Add styling to the application so that the three sections show up side-by-side instead of one under the other
+- Move the Header into a component
+- Don't allow submissions with empty text in one of the fields (throw an alert instead)
+- Show an alert if distance or time is not greater than 0
+- Show a congratulatory message to the runner above the inputs if they ran longer or faster than ever before
+- Use props to merge all of the three running sections into a single, reusable component
