@@ -26,6 +26,6 @@ A deployed version of the application can be found at: [react-runner-stretch.net
 - Move the Header into a component
 - Don't allow submissions with empty text in one of the fields (throw an alert instead)
 - Show an alert if distance or time is not greater than 0
+- Move the alert functionality to a new component with conditional rendering (show alert only if there was an error)
 - Show a congratulatory message to the runner above the inputs if they ran longer or faster than ever before
-- Create the ability to show the best run by distance, time, and 
 - Use props to merge all of the three running sections into a single, reusable component
