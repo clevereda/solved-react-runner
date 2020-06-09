@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Calculate from '../Calculate/Calculate'
 import './App.css';
 
 class App extends Component {
@@ -8,7 +9,8 @@ class App extends Component {
         <header>
           <h1>React Track Runner</h1>
         </header>
-      </div>
+        <Calculate />
+      </div >
     );
   }
 }
