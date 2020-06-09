@@ -10,15 +10,15 @@ Create an application that allow her to enter her most recent run. It should alw
 
 ![Base Requirements](images/base-requirements.gif)
 
-A deployed version of this application in action can be found at: react-track-runner.netlify.com
+A deployed version of this application in action can be found at: [react-track-runner.netlify.com](react-track-runner.netlify.com)
 
 ## Stretch Goals
 
-As the long-distance runner trains, she realizes that she would also like to know how fast she is going. Add another section for her fastest run that displays the fastest run based on miles per hour.
+As the long-distance runner trains, she realizes that she would also like to know how fast she is going. Add another section for her fastest run that displays the fastest run based on miles per hour. See below.
 
 ![Stretch Goals](images/stretch-goals.gif)
 
-A deployed version of the application with stretch goals can be found at: react-runner-stretch.netlify.com
+A deployed version of the application can be found at: [react-runner-stretch.netlify.com](react-runner-stretch.netlify.com)
 
 ### Additional Stretch Goals
 
@@ -27,4 +27,5 @@ A deployed version of the application with stretch goals can be found at: react-
 - Don't allow submissions with empty text in one of the fields (throw an alert instead)
 - Show an alert if distance or time is not greater than 0
 - Show a congratulatory message to the runner above the inputs if they ran longer or faster than ever before
+- Create the ability to show the best run by distance, time, and 
 - Use props to merge all of the three running sections into a single, reusable component
