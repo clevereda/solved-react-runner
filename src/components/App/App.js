@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Calculate from '../Calculate/Calculate'
+import Example from '../Example/Example'
 import './App.css';
 
 class App extends Component {
@@ -56,8 +57,6 @@ class App extends Component {
     this.setState({
       lastMiles: miles,
       lastTime: time,
-      lastSpeed: speed,
-
       //add the run to the total distance
       totalDistance: (Number(totalDistance) + Number(miles))
     });
@@ -67,7 +66,6 @@ class App extends Component {
       this.setState({
         longestMiles: miles,
         longestTime: time,
-        longestSpeed: speed
       });
     }
 
@@ -140,8 +138,12 @@ class App extends Component {
         <Calculate distance={this.state.fastestMiles} time={this.state.fastestTime} />
         <hr />
         <h2>
+          WORLD RECORD:
 
-          {/* DISPLAY OUR TOTAL DISTANCE */}
+        </h2>
+        <Example />
+        {/* DISPLAY OUR TOTAL DISTANCE */}
+        <h2>
           TOTAL DISTANCE:{this.state.totalDistance}
         </h2>
       </div >
