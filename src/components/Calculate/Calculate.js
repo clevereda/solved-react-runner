@@ -3,23 +3,53 @@ import React, { Component } from 'react';
 class Calculate extends Component {
     state = {
         miles: 0,
-        last: 0,
-        most: 0
+        time: 0,
+        lastTime: 0,
+        lastMiles: 0,
+        lastSpeed: 0,
+        longestMiles: 0,
+        longestTime: 0,
+        longestSpeed: 0,
+        fastestMiles: 0,
+        fastestTime: 0,
+        fastestSpeed: 0
+    }
+    calculateSpeed = (distance, time) => {
+        let speed = (60 / time) * distance;
+        return speed;
     }
     setLast = (event) => {
-        let val = this.state.miles;
-        let most = this.state.most;
-        if (val > most) {
+        let miles = this.state.miles;
+        let time = this.state.time;
+        let speed = this.calculateSpeed(miles, time);
+        if (miles > this.state.longestMiles) {
+            console.log('OOOOO baby')
             this.setState({
-                most: val
-            })
+                longestMiles: miles,
+                longestTime: time,
+                longestSpeed: speed
+            });
+        }
+        if (speed > this.state.fastestSpeed) {
+            this.setState({
+                fastestMiles: miles,
+                fastestTime: time,
+                fastestSpeed: speed
+            });
         }
         this.setState({
-            last: val
-        })
+            lastMiles: miles,
+            lastTime: time,
+            lastSpeed: speed
+        });
+    }
+    setTime = (event) => {
+        let val = event.target.value;
+        this.setState({
+            time: val
+        });
     }
     setMiles = (event) => {
-
         let val = event.target.value;
         this.setState({
             miles: val
@@ -27,14 +57,36 @@ class Calculate extends Component {
     }
     render() {
         return (
-            <div>
-                <h3>  <input type='number' id="number" onChange={this.setMiles} />
-                    <button onClick={this.setLast}>Add Run</button>
-                    <div> MILES RUN: {this.state.miles}</div>
-                    <div> LAST RUN: {this.state.last}</div>
-                    <div> MOST MILES RUN: {this.state.most}</div>
-
-                </h3>
+            <div className="container">
+                <div className='row col-12'>
+                    <div className='col-12 col-md-4 mx-1'>
+                        <input type='number' placeholder="miles" onChange={this.setMiles} />
+                    </div>
+                    <div className='col-12 col-md-4 mx-1'>
+                        <input type='number' placeholder="time(minutes)" onChange={this.setTime} />
+                    </div>
+                    <div className='col-12 col-md-3 mx-1'>
+                        <button className="btn btn-success" onClick={this.setLast}>Add Run</button>
+                    </div>
+                </div>
+                <div className='row my-4'>
+                    <div className='col-12 h3'><u> LAST RUN</u> </div>
+                    <div className='col-12 col-sm-4'>TIME: {this.state.lastTime} min </div>
+                    <div className='col-12 col-sm-4'>DISTANCE: {this.state.lastMiles} miles </div>
+                    <div className='col-12 col-sm-4'>SPEED: {this.state.lastSpeed} mph </div>
+                </div>
+                <div className='row my-4'>
+                    <div className='col-12 h3'><u> LONGEST RUN</u></div>
+                    <div className='col-12 col-sm-4'>TIME: {this.state.longestTime} min </div>
+                    <div className='col-12 col-sm-4'>DISTANCE: {this.state.longestMiles} miles </div>
+                    <div className='col-12 col-sm-4'>SPEED: {this.state.longestSpeed} mph </div>
+                </div>
+                <div className='row my-4'>
+                    <div className='col-12 h3'><u> FASTEST RUN</u></div>
+                    <div className='col-12 col-sm-4'>TIME: {this.state.fastestTime} min </div>
+                    <div className='col-12 col-sm-4'>DISTANCE: {this.state.fastestMiles} miles </div>
+                    <div className='col-12 col-sm-4'>SPEED: {this.state.fastestSpeed} mph </div>
+                </div>
             </div >
         );
     }
