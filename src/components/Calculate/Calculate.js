@@ -22,8 +22,12 @@ class Calculate extends Component {
         let miles = this.state.miles;
         let time = this.state.time;
         let speed = this.calculateSpeed(miles, time);
+        this.setState({
+            lastMiles: miles,
+            lastTime: time,
+            lastSpeed: speed
+        });
         if (miles > this.state.longestMiles) {
-            console.log('OOOOO baby')
             this.setState({
                 longestMiles: miles,
                 longestTime: time,
@@ -37,11 +41,6 @@ class Calculate extends Component {
                 fastestSpeed: speed
             });
         }
-        this.setState({
-            lastMiles: miles,
-            lastTime: time,
-            lastSpeed: speed
-        });
     }
     setTime = (event) => {
         let val = event.target.value;
